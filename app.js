@@ -34,11 +34,13 @@ btn.addEventListener('click',function(){
 
     }else if (+userGuess.value > random){
         start.textContent = 'Too high😒😒'
+        userGuess.value=' '
         end(trials)
         
 
     }else if (+userGuess.value < random){
         start.textContent = 'Too low'
+        userGuess.value=' '
         end(trials)
        
 
