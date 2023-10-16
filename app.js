@@ -7,14 +7,14 @@ let trials = document.querySelector('.trials')
 const btn = document.querySelector('.check')
 const start = document.querySelector('.start')
 const btn1 =  document.querySelector('.again')
-const body =document.querySelector('body')
-// compGuess.textContent = random
-// let at = Number(trials.textContent)
+const body = document.querySelector('body')
+
 const end = function(trials){
-    if(trials.textContent>0){
+    if(trials.textContent>1){
         trials.textContent--
 
-    }else if(trials.textContent==0){
+    }else if(trials.textContent==1){
+        
         window.location.reload()
 
     }
@@ -22,23 +22,25 @@ const end = function(trials){
 }
 
 
+// document.body.style.backgroundColor='green'
 
-
-btn.addEventListener('click',function(){
+ btn.addEventListener('click',function(){
     if(+userGuess.value === random){
-        console.log('true');
-        body.style.backgroundColor='green'
+        
+        document.body.style.backgroundColor='green'
 
         start.textContent= 'Correct answer😁'
         compGuess.textContent = random
 
     }else if (+userGuess.value > random){
+        document.body.style.backgroundColor='orange'
         start.textContent = 'Too high😒😒'
         userGuess.value=' '
         end(trials)
         
 
     }else if (+userGuess.value < random){
+        document.body.style.backgroundColor='blue'
         start.textContent = 'Too low'
         userGuess.value=' '
         end(trials)
@@ -48,7 +50,7 @@ btn.addEventListener('click',function(){
     
 
 })
-const relo = btn1.addEventListener('click',()=>{
+btn1.addEventListener('click',()=>{
     window.location.reload()
 })
 
